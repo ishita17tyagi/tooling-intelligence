@@ -29,9 +29,32 @@ Production-inspired pipeline that researches SaaS tools, validates integration m
 
 ---
 
+# 🌐 Live Demo
+
+| Resource | Link |
+|----------|------|
+| 📊 Interactive HTML Dashboard | https://ishita17tyagi.github.io/tooling-intelligence/ |
+| 📝 Engineering Blog | https://behind-the-build.hashnode.dev/prompting-is-easy-engineering-reliable-ai-systems-isn-t |
+| 🧠 Engineering Decisions | [ENGINEERING_DECISIONS.md](ENGINEERING_DECISIONS.md) |
+
+> The HTML dashboard is generated from the latest sample batch execution included in this repository.
+
+---
+
+## 🚀 Start Here
+
+If you're visiting this repository for the first time, here's the recommended order:
+
+1. 🌐 Explore the Live Dashboard
+2. 📖 Read the Engineering Blog
+3. 🧠 Review the Engineering Decisions
+4. 💻 Explore the source code
+
 # 🚀 Overview
 
-Tooling Intelligence is an AI-powered research engine that evaluates SaaS applications from a developer integration perspective.
+The project emphasizes **engineering reliable systems around LLMs**, not simply generating responses.
+
+Rather than relying solely on prompt engineering, Tooling Intelligence combines deterministic verification, normalization, analytics, and reporting to produce trustworthy, explainable outputs from AI-generated research.
 
 Given a list of applications, it automatically:
 
@@ -179,9 +202,10 @@ Some key design choices:
 - Continues processing even if individual applications fail.
 - Generates a **static HTML dashboard** from saved artifacts rather than relying on a running backend.
 
-📖 Read the detailed engineering write-up:
+📖 Learn more about the architecture and design philosophy:
 
-**➡️ [ENGINEERING_DECISIONS.md](ENGINEERING_DECISIONS.md)**
+- **Engineering Retrospective:** [ENGINEERING_DECISIONS.md](ENGINEERING_DECISIONS.md)
+- **Engineering Blog:** https://behind-the-build.hashnode.dev/prompting-is-easy-engineering-reliable-ai-systems-isn-t
 
 ---
 
@@ -350,9 +374,25 @@ The pipeline automatically generates:
 - Retry queue with exponential backoff
 - Interactive charts
 - Docker deployment
-- User-provided API keys
+- User-supplied LLM API keys for self-hosted research
 - Incremental batch execution
 - Database-backed persistence
+
+---
+
+# 📚 Resources
+
+- 🌐 Live Dashboard  
+  https://ishita17tyagi.github.io/tooling-intelligence/
+
+- 📝 Engineering Blog  
+  https://behind-the-build.hashnode.dev/prompting-is-easy-engineering-reliable-ai-systems-isn-t
+
+- 🧠 Engineering Decisions  
+  [ENGINEERING_DECISIONS.md](ENGINEERING_DECISIONS.md)
+
+- 📄 Assignment Notes  
+  [docs/ASSIGNMENT_NOTES.md](docs/ASSIGNMENT_NOTES.md)
 
 ---
 
