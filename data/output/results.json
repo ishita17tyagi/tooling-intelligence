@@ -1,17 +1,18 @@
 [
   {
     "result": {
-      "application": "Stripe",
-      "category": "Payment Processing",
-      "description": "Stripe is a suite of APIs powering online payment processing and commerce solutions for internet businesses of all sizes.",
-      "authentication": "OAuth + API Keys",
+      "application": "Salesforce",
+      "category": "CRM",
+      "description": "Salesforce is a leading cloud-based customer relationship management (CRM) platform that provides software and enterprise applications focused on sales, customer service, marketing automation, analytics, and application development.",
+      "authentication": "OAuth + JWT",
       "self_serve": "Self Serve",
-      "api_surface": "Comprehensive REST API covering payments, subscriptions, billing, Connect, and financial services, supported by official SDKs and webhooks.",
+      "api_surface": "REST API, SOAP API, Bulk API 2.0, Pub/Sub API (gRPC-based), Tooling API, Metadata API, and custom Apex REST/SOAP endpoints.",
       "buildability": "High",
       "main_blocker": "None",
       "evidence_urls": [
-        "https://docs.stripe.com",
-        "https://stripe.com/docs/api"
+        "https://developer.salesforce.com/docs",
+        "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm",
+        "https://developer.salesforce.com/docs/platform/pub-sub-api/guide/intro.html"
       ]
     },
     "verification": {
@@ -20,6 +21,223 @@
       "completeness_score": 1,
       "overall_confidence": 1,
       "deductions": []
+    }
+  },
+  {
+    "result": {
+      "application": "Zendesk",
+      "category": "Customer Support",
+      "description": "Zendesk is a customer service platform that offers ticketing, self-service portal creation, and customer support team management solutions.",
+      "authentication": "OAuth",
+      "self_serve": "Self Serve",
+      "api_surface": "Support REST API, Help Center (Guide) API, Chat API, Talk API, Webhooks, Zendesk Apps Framework (ZAF), and Channel Framework.",
+      "buildability": "High",
+      "main_blocker": "None",
+      "evidence_urls": [
+        "https://developer.zendesk.com/",
+        "https://developer.zendesk.com/api-reference/",
+        "https://developer.zendesk.com/api-reference/ticketing/introduction/security-and-auth/"
+      ]
+    },
+    "verification": {
+      "structural_score": 1,
+      "evidence_score": 1,
+      "completeness_score": 1,
+      "overall_confidence": 1,
+      "deductions": []
+    }
+  },
+  {
+    "result": {
+      "application": "Slack",
+      "category": "Communication",
+      "description": "Slack is a cloud-based team communication and collaboration platform that provides channels, direct messaging, and a robust API for integrating external applications and workflows.",
+      "authentication": "OAuth",
+      "self_serve": "Self Serve",
+      "api_surface": "Web API (REST), Events API, Socket Mode, Block Kit, SCIM API, Audit Logs API",
+      "buildability": "High",
+      "main_blocker": "None",
+      "evidence_urls": [
+        "https://api.slack.com/",
+        "https://api.slack.com/authentication",
+        "https://api.slack.com/apis"
+      ]
+    },
+    "verification": {
+      "structural_score": 1,
+      "evidence_score": 1,
+      "completeness_score": 1,
+      "overall_confidence": 1,
+      "deductions": []
+    }
+  },
+  {
+    "result": {
+      "application": "Google Ads",
+      "category": "Digital Advertising",
+      "description": "Google's online advertising platform that allows businesses to display ads on Google's search results page, YouTube, and partner websites.",
+      "authentication": "OAuth",
+      "self_serve": "Unknown",
+      "api_surface": "gRPC and REST",
+      "buildability": "Medium",
+      "main_blocker": "Developer token approval process which requires compliance reviews and manual auditing for production level access.",
+      "evidence_urls": [
+        "https://developers.google.com/google-ads/api/docs/start",
+        "https://developers.google.com/google-ads/api/docs/oauth/overview",
+        "https://developers.google.com/google-ads/api/docs/first-call/dev-token"
+      ]
+    },
+    "verification": {
+      "structural_score": 1,
+      "evidence_score": 1,
+      "completeness_score": 1,
+      "overall_confidence": 1,
+      "deductions": []
+    }
+  },
+  {
+    "result": {
+      "application": "Shopify",
+      "category": "E-commerce",
+      "description": "Shopify is a multi-channel commerce platform that enables businesses to sell online, in-store, and everywhere in between, supported by a highly extensible app ecosystem.",
+      "authentication": "OAuth",
+      "self_serve": "Self Serve",
+      "api_surface": "GraphQL Admin API, REST Admin API, Storefront API (GraphQL), Customer Privacy API, Customer Account API, Partner API",
+      "buildability": "High",
+      "main_blocker": "None",
+      "evidence_urls": [
+        "https://shopify.dev",
+        "https://shopify.dev/docs/api",
+        "https://shopify.dev/docs/apps/auth"
+      ]
+    },
+    "verification": {
+      "structural_score": 1,
+      "evidence_score": 1,
+      "completeness_score": 1,
+      "overall_confidence": 1,
+      "deductions": []
+    }
+  },
+  {
+    "result": {
+      "application": "DataForSEO",
+      "category": "SEO \u0026 Marketing Data API",
+      "description": "DataForSEO provides a comprehensive suite of SEO and digital marketing APIs, including SERP, keyword, backlink, domain, and merchant data for developers and SEO platforms.",
+      "authentication": "Basic Authentication",
+      "self_serve": "Self Serve",
+      "api_surface": "REST API",
+      "buildability": "High",
+      "main_blocker": "None",
+      "evidence_urls": [
+        "https://docs.dataforseo.com/",
+        "https://dataforseo.com/api-pricing"
+      ]
+    },
+    "verification": {
+      "structural_score": 1,
+      "evidence_score": 0.9,
+      "completeness_score": 1,
+      "overall_confidence": 0.9650000000000001,
+      "deductions": [
+        "URL domain missing official subdomains or trusted roots: https://dataforseo.com/api-pricing"
+      ]
+    }
+  },
+  {
+    "result": {
+      "application": "GitHub",
+      "category": "Developer Tools",
+      "description": "GitHub is a web-based platform for version control and collaboration, allowing developers to host and review code, manage projects, and build software.",
+      "authentication": "OAuth + PAT + JWT",
+      "self_serve": "Self Serve",
+      "api_surface": "REST API, GraphQL API, Webhooks, GitHub Actions",
+      "buildability": "High",
+      "main_blocker": "None",
+      "evidence_urls": [
+        "https://docs.github.com/en/rest",
+        "https://docs.github.com/en/graphql",
+        "https://docs.github.com/en/apps"
+      ]
+    },
+    "verification": {
+      "structural_score": 1,
+      "evidence_score": 1,
+      "completeness_score": 1,
+      "overall_confidence": 1,
+      "deductions": []
+    }
+  },
+  {
+    "result": {
+      "application": "Notion",
+      "category": "Communication",
+      "description": "Notion is an all-in-one workspace that combines notes, docs, wikis, database management, and project tracking in a single customizable platform.",
+      "authentication": "OAuth",
+      "self_serve": "Self Serve",
+      "api_surface": "REST API",
+      "buildability": "High",
+      "main_blocker": "None",
+      "evidence_urls": [
+        "https://developers.notion.com",
+        "https://developers.notion.com/reference/intro"
+      ]
+    },
+    "verification": {
+      "structural_score": 1,
+      "evidence_score": 1,
+      "completeness_score": 1,
+      "overall_confidence": 1,
+      "deductions": []
+    }
+  },
+  {
+    "result": {
+      "application": "Stripe",
+      "category": "Payment Processing \u0026 Financial Services",
+      "description": "Stripe is a suite of APIs powering online payment processing and commerce solutions for internet businesses of all sizes.",
+      "authentication": "OAuth + API Keys",
+      "self_serve": "Self Serve",
+      "api_surface": "REST API, Webhooks, Official SDKs (Node.js, Python, Go, Java, PHP, Ruby, .NET), and Stripe CLI",
+      "buildability": "High",
+      "main_blocker": "None",
+      "evidence_urls": [
+        "https://docs.stripe.com",
+        "https://docs.stripe.com/api"
+      ]
+    },
+    "verification": {
+      "structural_score": 1,
+      "evidence_score": 1,
+      "completeness_score": 1,
+      "overall_confidence": 1,
+      "deductions": []
+    }
+  },
+  {
+    "result": {
+      "application": "NotebookLM",
+      "category": "Productivity",
+      "description": "An AI-powered personalized collaborator by Google that helps users synthesize and gain insights from their uploaded documents and notes.",
+      "authentication": "OAuth",
+      "self_serve": "Self Serve",
+      "api_surface": "None",
+      "buildability": "Low",
+      "main_blocker": "NotebookLM does not currently expose a public developer API, SDK, or integration endpoints.",
+      "evidence_urls": [
+        "https://notebooklm.google/",
+        "https://support.google.com/notebooklm/answer/14275887"
+      ]
+    },
+    "verification": {
+      "structural_score": 1,
+      "evidence_score": 0.8,
+      "completeness_score": 1,
+      "overall_confidence": 0.9299999999999999,
+      "deductions": [
+        "URL domain missing official subdomains or trusted roots: https://notebooklm.google/",
+        "URL domain missing official subdomains or trusted roots: https://support.google.com/notebooklm/answer/14275887"
+      ]
     }
   }
 ]

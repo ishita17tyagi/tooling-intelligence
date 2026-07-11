@@ -1,30 +1,89 @@
 {
-  "total_applications": 1,
-  "average_confidence": 1,
+  "total_applications": 10,
+  "average_confidence": 0.99,
   "authentication_distribution": {
     "API Keys + OAuth": {
       "count": 1,
-      "percentage": 100
+      "percentage": 10
+    },
+    "Basic Auth": {
+      "count": 1,
+      "percentage": 10
+    },
+    "OAuth + PAT": {
+      "count": 1,
+      "percentage": 10
+    },
+    "OAuth 2.0": {
+      "count": 7,
+      "percentage": 70
     }
   },
   "category_distribution": {
-    "Payment Processing": {
+    "CRM": {
       "count": 1,
-      "percentage": 100
+      "percentage": 10
+    },
+    "Communication": {
+      "count": 2,
+      "percentage": 20
+    },
+    "Customer Support": {
+      "count": 1,
+      "percentage": 10
+    },
+    "Developer Tools": {
+      "count": 1,
+      "percentage": 10
+    },
+    "Digital Advertising": {
+      "count": 1,
+      "percentage": 10
+    },
+    "E-commerce": {
+      "count": 1,
+      "percentage": 10
+    },
+    "Payment Processing \u0026 Financial Services": {
+      "count": 1,
+      "percentage": 10
+    },
+    "Productivity": {
+      "count": 1,
+      "percentage": 10
+    },
+    "SEO \u0026 Marketing Data API": {
+      "count": 1,
+      "percentage": 10
     }
   },
   "self_serve_distribution": {
     "Self Serve": {
+      "count": 9,
+      "percentage": 90
+    },
+    "Unknown": {
       "count": 1,
-      "percentage": 100
+      "percentage": 10
     }
   },
   "buildability_distribution": {
     "High": {
+      "count": 8,
+      "percentage": 80
+    },
+    "Low": {
       "count": 1,
-      "percentage": 100
+      "percentage": 10
+    },
+    "Medium": {
+      "count": 1,
+      "percentage": 10
     }
   },
-  "top_blockers": {},
+  "top_blockers": {
+    "Developer token approval process which requires compliance reviews and manual auditing for production level access.": 1,
+    "NotebookLM does not currently expose a public developer API, SDK, or integration endpoints.": 1
+  },
   "manual_review_count": 0
 }

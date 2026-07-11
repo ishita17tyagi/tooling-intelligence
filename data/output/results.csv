@@ -1,2 +1,11 @@
 Application,Category,Authentication,Self Serve,API Surface,Buildability,Main Blocker,Overall Confidence
-Stripe,Payment Processing,OAuth + API Keys,Self Serve,"Comprehensive REST API covering payments, subscriptions, billing, Connect, and financial services, supported by official SDKs and webhooks.",High,None,1.00
+Salesforce,CRM,OAuth + JWT,Self Serve,"REST API, SOAP API, Bulk API 2.0, Pub/Sub API (gRPC-based), Tooling API, Metadata API, and custom Apex REST/SOAP endpoints.",High,None,1.00
+Zendesk,Customer Support,OAuth,Self Serve,"Support REST API, Help Center (Guide) API, Chat API, Talk API, Webhooks, Zendesk Apps Framework (ZAF), and Channel Framework.",High,None,1.00
+Slack,Communication,OAuth,Self Serve,"Web API (REST), Events API, Socket Mode, Block Kit, SCIM API, Audit Logs API",High,None,1.00
+Google Ads,Digital Advertising,OAuth,Unknown,gRPC and REST,Medium,Developer token approval process which requires compliance reviews and manual auditing for production level access.,1.00
+Shopify,E-commerce,OAuth,Self Serve,"GraphQL Admin API, REST Admin API, Storefront API (GraphQL), Customer Privacy API, Customer Account API, Partner API",High,None,1.00
+DataForSEO,SEO & Marketing Data API,Basic Authentication,Self Serve,REST API,High,None,0.97
+GitHub,Developer Tools,OAuth + PAT + JWT,Self Serve,"REST API, GraphQL API, Webhooks, GitHub Actions",High,None,1.00
+Notion,Communication,OAuth,Self Serve,REST API,High,None,1.00
+Stripe,Payment Processing & Financial Services,OAuth + API Keys,Self Serve,"REST API, Webhooks, Official SDKs (Node.js, Python, Go, Java, PHP, Ruby, .NET), and Stripe CLI",High,None,1.00
+NotebookLM,Productivity,OAuth,Self Serve,None,Low,"NotebookLM does not currently expose a public developer API, SDK, or integration endpoints.",0.93
