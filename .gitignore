@@ -1,0 +1,31 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Build
+/bin/
+/dist/
+
+# Go
+*.test
+coverage.out
+
+# IDE
+.vscode/
+.idea/
+
+# Environment
+.env
+
+# Output
+data/output/*
+!data/output/.gitkeep
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
