@@ -380,22 +380,6 @@ The pipeline automatically generates:
 
 ---
 
-# 📚 Resources
-
-- 🌐 Live Dashboard  
-  https://ishita17tyagi.github.io/tooling-intelligence/
-
-- 📝 Engineering Blog  
-  https://behind-the-build.hashnode.dev/prompting-is-easy-engineering-reliable-ai-systems-isn-t
-
-- 🧠 Engineering Decisions  
-  [ENGINEERING_DECISIONS.md](ENGINEERING_DECISIONS.md)
-
-- 📄 Assignment Notes  
-  [docs/ASSIGNMENT_NOTES.md](docs/ASSIGNMENT_NOTES.md)
-
----
-
 # 📄 License
 
 MIT
