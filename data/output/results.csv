@@ -1,0 +1,2 @@
+Application,Category,Authentication,Self Serve,API Surface,Buildability,Main Blocker,Overall Confidence
+Stripe,Payment Processing,OAuth + API Keys,Self Serve,"Comprehensive REST API covering payments, subscriptions, billing, Connect, and financial services, supported by official SDKs and webhooks.",High,None,1.00

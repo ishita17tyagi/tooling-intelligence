@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooling Intelligence - AI Research Report</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --primary: #6c63ff;
+            --primary-light: #f0efff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --card-bg: #ffffff;
+            --border: #e5e7eb;
+            --radius: 12px;
+            --danger: #ef4444;
+            --danger-bg: #fee2e2;
+            --success: #10b981;
+            --success-bg: #d1fae5;
+            --warning: #f59e0b;
+            --warning-bg: #fef3c7;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .hero-left {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .hero-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .hero-title h1 {
+            color: var(--text-main);
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-title h1 span {
+            color: var(--primary);
+        }
+
+        .hero-title p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .hero-right {
+            text-align: right;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            border-left: 2px solid var(--border);
+            padding-left: 2rem;
+        }
+
+        .hero-right strong {
+            color: var(--text-main);
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-flex {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            background-color: var(--bg-color);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+
+        .card-info {
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+        }
+
+        .card-value {
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .distributions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            color: var(--text-main);
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.925rem;
+        }
+
+        th, td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background-color: var(--bg-color);
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        th.sortable {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        th.sortable:hover {
+            background-color: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .chart-bar-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            width: 100%;
+        }
+
+        .chart-bar-bg {
+            background-color: var(--bg-color);
+            border-radius: 4px;
+            flex-grow: 1;
+            height: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .chart-bar-fill {
+            background-color: var(--primary);
+            height: 100%;
+            border-radius: 4px;
+        }
+
+        .chart-percent-text {
+            font-size: 0.85rem;
+            font-weight: 600;
+            min-width: 45px;
+            text-align: right;
+        }
+
+        .table-container {
+            max-height: 600px;
+            overflow-y: auto;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background-color: var(--card-bg);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            margin-bottom: 3rem;
+        }
+
+        .table-container table th {
+            position: sticky;
+            top: 0;
+            background-color: #f1f5f9;
+            z-index: 10;
+            box-shadow: inset 0 -1px 0 var(--border);
+        }
+
+        .search-container {
+            margin-bottom: 1.5rem;
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 400px;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+
+        .blockers-list {
+            list-style: none;
+        }
+
+        .blockers-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .blockers-list li:last-child {
+            border-bottom: none;
+        }
+
+        .badge-count {
+            background-color: var(--primary-light);
+            color: var(--primary);
+            font-weight: 700;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        .badge-confidence {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-weight: 700;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+        }
+
+        .badge-success { background-color: var(--success-bg); color: var(--success); }
+        .badge-warning { background-color: var(--warning-bg); color: var(--warning); }
+        .badge-danger { background-color: var(--danger-bg); color: var(--danger); }
+
+        .metadata-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .metadata-item {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .metadata-item strong {
+            color: var(--text-main);
+            display: block;
+            font-size: 0.95rem;
+            margin-top: 0.15rem;
+        }
+
+        footer {
+            margin-top: 5rem;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1.5rem;
+                gap: 1.5rem;
+            }
+            .hero-right {
+                text-align: left;
+                border-left: none;
+                border-top: 2px solid var(--border);
+                padding-left: 0;
+                padding-top: 1.5rem;
+                width: 100%;
+            }
+            .distributions-grid {
+                grid-template-columns: 1fr;
+            }
+            body {
+                padding: 1rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="hero-section">
+            <div class="hero-left">
+                <img src="/assets/logo.png" alt="Logo" class="hero-logo" onerror="this.style.display='none'">
+                <div class="hero-title">
+                    <h1>🛠 Tooling <span>Intelligence</span></h1>
+                    <p>AI-powered SaaS Integration Research Platform</p>
+                </div>
+            </div>
+            <div class="hero-right">
+                <p>Generated: <strong>11 July 2026</strong></p>
+                <p>Engine: <strong>Gemini + Verification Pipeline</strong></p>
+            </div>
+        </section>
+
+        <section class="summary-grid">
+            <div class="card">
+                <div class="card-flex">
+                    <div class="card-icon">📦</div>
+                    <div class="card-info">
+                        <div class="card-title">Applications</div>
+                        <div class="card-value">1</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-flex">
+                    <div class="card-icon">📈</div>
+                    <div class="card-info">
+                        <div class="card-title">Avg Confidence</div>
+                        <div class="card-value">100%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-flex">
+                    <div class="card-icon">⚠</div>
+                    <div class="card-info">
+                        <div class="card-title">Manual Review</div>
+                        <div class="card-value">
+                            
+                                0
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-flex">
+                    <div class="card-icon">📂</div>
+                    <div class="card-info">
+                        <div class="card-title">Categories</div>
+                        <div class="card-value">1</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="distributions-grid">
+            <div class="card">
+                <h2 class="section-title">Authentication Distribution</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Authentication</th>
+                            <th style="width: 60px;">Count</th>
+                            <th>Distribution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td><strong>API Keys &#43; OAuth</strong></td>
+                            <td>1</td>
+                            <td>
+                                <div class="chart-bar-container">
+                                    <div class="chart-bar-bg">
+                                        <div class="chart-bar-fill" style="--bar-width: 100%; width: var(--bar-width);"></div>
+                                    </div>
+                                    <span class="chart-percent-text">100.0%</span>
+                                </div>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h2 class="section-title">Category Distribution</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th style="width: 60px;">Count</th>
+                            <th>Distribution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td><strong>Payment Processing</strong></td>
+                            <td>1</td>
+                            <td>
+                                <div class="chart-bar-container">
+                                    <div class="chart-bar-bg">
+                                        <div class="chart-bar-fill" style="--bar-width: 100%; width: var(--bar-width);"></div>
+                                    </div>
+                                    <span class="chart-percent-text">100.0%</span>
+                                </div>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="distributions-grid">
+            <div class="card">
+                <h2 class="section-title">Buildability Distribution</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Buildability</th>
+                            <th style="width: 60px;">Count</th>
+                            <th>Distribution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td><strong>High</strong></td>
+                            <td>1</td>
+                            <td>
+                                <div class="chart-bar-container">
+                                    <div class="chart-bar-bg">
+                                        <div class="chart-bar-fill" style="--bar-width: 100%; width: var(--bar-width);"></div>
+                                    </div>
+                                    <span class="chart-percent-text">100.0%</span>
+                                </div>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h2 class="section-title">Top Blockers</h2>
+                <ul class="blockers-list">
+                    
+                    <li>
+                        <span style="color: var(--text-muted); font-style: italic;">None detected</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </section>
+
+        <div class="card" style="margin-bottom: 3rem;">
+            <h2 class="section-title">Report Information</h2>
+            <div class="metadata-grid">
+                <div class="metadata-item">Generated On <strong>11 July 2026</strong></div>
+                <div class="metadata-item">Research Engine <strong>Gemini 2.5 Flash</strong></div>
+                <div class="metadata-item">Verification <strong>Deterministic Heuristic</strong></div>
+                <div class="metadata-item">Manual Review Threshold <strong>&lt; 80% Confidence</strong></div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Applications Inventory</h2>
+        <div class="search-container">
+            <input type="text" id="inventorySearch" class="search-input" placeholder="Search applications, categories, blockers...">
+        </div>
+
+        <div class="table-container">
+            <table id="inventoryTable">
+                <thead>
+                    <tr>
+                        <th class="sortable" onclick="sortTable(0)">Application ↕</th>
+                        <th class="sortable" onclick="sortTable(1)">Category ↕</th>
+                        <th class="sortable" onclick="sortTable(2)">Authentication ↕</th>
+                        <th class="sortable" onclick="sortTable(3)">Self Serve ↕</th>
+                        <th class="sortable" onclick="sortTable(4)">Buildability ↕</th>
+                        <th class="sortable" onclick="sortTable(5)">Confidence ↕</th>
+                        <th>Main Blocker</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td><strong>Stripe</strong></td>
+                        <td>Payment Processing</td>
+                        <td>OAuth &#43; API Keys</td>
+                        <td>Self Serve</td>
+                        <td>High</td>
+                        <td data-sort="1">
+                            
+                            <span class="badge-confidence badge-success">🟢 1.00</span>
+                            
+                        </td>
+                        <td>
+                            
+                                None
+                            
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <p>Generated automatically by Tooling Intelligence Framework &bull; Version 1.0</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('inventorySearch').addEventListener('keyup', function() {
+            const query = this.value.toLowerCase();
+            const rows = document.querySelectorAll('#inventoryTable tbody tr');
+            
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(query) ? '' : 'none';
+            });
+        });
+
+        let sortDirections = {};
+        function sortTable(columnIndex) {
+            const table = document.getElementById("inventoryTable");
+            const tbody = table.tBodies[0];
+            const rows = Array.from(tbody.rows);
+            
+            sortDirections[columnIndex] = !sortDirections[columnIndex];
+            const ascending = sortDirections[columnIndex];
+
+            rows.sort((a, b) => {
+                let cellA = a.cells[columnIndex];
+                let cellB = b.cells[columnIndex];
+
+                let valA = cellA.getAttribute('data-sort') || cellA.textContent.trim();
+                let valB = cellB.getAttribute('data-sort') || cellB.textContent.trim();
+
+                if (!isNaN(valA) && !isNaN(valB)) {
+                    return ascending ? valA - valB : valB - valA;
+                }
+                return ascending ? valA.localeCompare(valB) : valB.localeCompare(valA);
+            });
+
+            rows.forEach(row => tbody.appendChild(row));
+        }
+    </script>
+</body>
+</html>

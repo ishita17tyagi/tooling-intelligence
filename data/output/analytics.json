@@ -1,0 +1,30 @@
+{
+  "total_applications": 1,
+  "average_confidence": 1,
+  "authentication_distribution": {
+    "API Keys + OAuth": {
+      "count": 1,
+      "percentage": 100
+    }
+  },
+  "category_distribution": {
+    "Payment Processing": {
+      "count": 1,
+      "percentage": 100
+    }
+  },
+  "self_serve_distribution": {
+    "Self Serve": {
+      "count": 1,
+      "percentage": 100
+    }
+  },
+  "buildability_distribution": {
+    "High": {
+      "count": 1,
+      "percentage": 100
+    }
+  },
+  "top_blockers": {},
+  "manual_review_count": 0
+}

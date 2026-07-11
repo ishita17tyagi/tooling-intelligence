@@ -1,0 +1,25 @@
+[
+  {
+    "result": {
+      "application": "Stripe",
+      "category": "Payment Processing",
+      "description": "Stripe is a suite of APIs powering online payment processing and commerce solutions for internet businesses of all sizes.",
+      "authentication": "OAuth + API Keys",
+      "self_serve": "Self Serve",
+      "api_surface": "Comprehensive REST API covering payments, subscriptions, billing, Connect, and financial services, supported by official SDKs and webhooks.",
+      "buildability": "High",
+      "main_blocker": "None",
+      "evidence_urls": [
+        "https://docs.stripe.com",
+        "https://stripe.com/docs/api"
+      ]
+    },
+    "verification": {
+      "structural_score": 1,
+      "evidence_score": 1,
+      "completeness_score": 1,
+      "overall_confidence": 1,
+      "deductions": []
+    }
+  }
+]

@@ -5,27 +5,26 @@
 *.so
 *.dylib
 
-# Build
-/bin/
-/dist/
+# Build output
+bin/
+dist/
 
-# Go
-*.test
-coverage.out
+# Environment
+.env
 
 # IDE
 .vscode/
 .idea/
 
-# Environment
-.env
-
-# Output
-data/output/*
-!data/output/.gitkeep
-
-# macOS
+# OS
 .DS_Store
-
-# Windows
 Thumbs.db
+
+# Logs
+*.log
+
+# Generated outputs (optional)
+# data/output/
+
+# Temporary
+tmp/
