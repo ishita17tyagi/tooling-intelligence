@@ -164,37 +164,35 @@ Some important design choices include:
 
 # 📸 Screenshots
 
-### Dashboard
+## Dashboard
 
-> *(Add screenshot here)*
-
-![Dashboard](assets/dashboard.png)
-
----
-
-### Analytics
-
-> *(Add screenshot here)*
-
-![Analytics](assets/analytics.png)
+<p align="center">
+<img src="assets/dashboard.png" width="900"/>
+</p>
 
 ---
 
-### Batch Processing Logs
+## Analytics
 
-> *(Add screenshot here)*
+<p align="center">
+<img src="assets/analytics.png" width="900"/>
+</p>
 
-![Logs](assets/server-logs.png)
+---
+
+## Batch Processing Logs
+
+<p align="center">
+<img src="assets/server-logs.png" width="900"/>
+</p>
 
 ---
 
-### Batch API Response
+## Batch API Response
 
-> *(Add screenshot here)*
-
-![API](assets/api-response.png)
-
----
+<p align="center">
+<img src="assets/api-response.png" width="900"/>
+</p>
 
 # 📁 Generated Artifacts
 
