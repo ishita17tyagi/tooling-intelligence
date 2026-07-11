@@ -8,157 +8,180 @@ pinned: false
 ---
 
 <p align="center">
-<img src="assets/logo.png" width="130"/>
+  <img src="assets/logo.png" width="140" alt="Tooling Intelligence Logo"/>
 </p>
 
-<h1 align="center">Tooling Intelligence</h1>
+<h1 align="center">🛠️ Tooling Intelligence</h1>
 
 <p align="center">
 <b>AI-powered SaaS Research, Verification & Analytics Platform</b><br>
-A production-inspired research engine that discovers, verifies and analyzes SaaS developer tools using Google Gemini and a deterministic verification pipeline.
+Production-inspired pipeline that researches SaaS tools, validates integration metadata, generates analytics and produces a shareable HTML dashboard.
 </p>
 
 <p align="center">
-<img src="https://img.shields.io/badge/Go-1.24-00ADD8?style=flat-square&logo=go"/>
-<img src="https://img.shields.io/badge/Gemini-Google-blue?style=flat-square&logo=google"/>
-<img src="https://img.shields.io/badge/Verification-Heuristic-success?style=flat-square"/>
-<img src="https://img.shields.io/badge/Architecture-Modular-important?style=flat-square"/>
-<img src="https://img.shields.io/badge/Output-HTML%20Dashboard-orange?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Go-1.24-00ADD8?style=flat-square&logo=go"/>
+  <img src="https://img.shields.io/badge/Google-Gemini-blue?style=flat-square&logo=google"/>
+  <img src="https://img.shields.io/badge/Architecture-Modular-success?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Verification-Deterministic-green?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Output-HTML%20Dashboard-orange?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Language-Go%201.24-00ADD8?style=flat-square"/>
 </p>
 
 ---
 
 # 🚀 Overview
 
-Tooling Intelligence is an AI-powered research platform that evaluates SaaS products from a developer integration perspective.
+Tooling Intelligence is an AI-powered research engine that evaluates SaaS applications from a developer integration perspective.
 
 Given a list of applications, it automatically:
 
-- researches official documentation
-- extracts structured integration metadata
-- normalizes inconsistent AI outputs
-- performs deterministic verification
-- generates confidence scores
-- creates analytics
-- exports a polished HTML dashboard
+- 🔍 Researches official documentation using Google Gemini
+- 📄 Extracts structured integration metadata
+- 🧹 Normalizes inconsistent AI outputs
+- ✅ Verifies responses using deterministic heuristics
+- 📈 Generates confidence scores
+- 📊 Produces analytics
+- 📑 Creates an interactive HTML dashboard
 
-Unlike simple prompt wrappers, the project focuses on building a complete engineering pipeline around LLMs.
+The project emphasizes **engineering reliable systems around LLMs**, not simply generating responses.
 
 ---
 
 # ✨ Features
 
-- AI-powered SaaS research using Google Gemini
-- Deterministic multi-stage verification pipeline
+- AI-powered SaaS research
+- Batch processing pipeline
+- Deterministic verification engine
 - Confidence scoring
-- Output normalization
-- Batch processing
-- JSON & CSV export
+- Automatic normalization
 - Analytics generation
-- Interactive HTML dashboard
+- Interactive HTML report
+- JSON & CSV export
 - Graceful error recovery
 - Manual review detection
 
 ---
 
-# 📊 Sample Evaluation
+# 📊 Sample Results
 
-The repository contains a generated report for **10 real-world SaaS platforms**.
-
-| Application |
-|-------------|
-| Salesforce |
-| Zendesk |
-| Slack |
-| Google Ads |
-| Shopify |
-| DataForSEO |
-| GitHub |
-| Notion |
-| Stripe |
-| NotebookLM |
-
-### Generated Analytics
+The repository includes a generated report for **10 real-world SaaS platforms**.
 
 | Metric | Value |
 |---------|------:|
-| Applications | **10** |
+| Applications Processed | **10** |
 | Average Confidence | **99%** |
 | Manual Review Queue | **0** |
 
+Applications evaluated:
+
+- Salesforce
+- Zendesk
+- Slack
+- Google Ads
+- Shopify
+- DataForSEO
+- GitHub
+- Notion
+- Stripe
+- NotebookLM
+
 ---
 
-# 🏗 Architecture
+# 🏗️ Architecture
 
-```text
-                 applications.csv
-                        │
-                        ▼
-                Batch Processor
-                        │
-                        ▼
-               Google Gemini Research
-                        │
-                        ▼
-             Structured Research Output
-                        │
-                        ▼
-                  Normalization
-                        │
-                        ▼
-          Deterministic Verification
-                        │
-                        ▼
-                Confidence Scoring
-                        │
-          ┌─────────────┴─────────────┐
-          ▼                           ▼
-    Analytics Engine             JSON / CSV
-          │                           │
-          └─────────────┬─────────────┘
-                        ▼
-             HTML Report Generator
+```mermaid
+flowchart LR
+
+    A["📄 applications.csv"]
+
+    subgraph Batch["⚙️ Batch Processing"]
+        B["Batch Processor"]
+    end
+
+    subgraph Research["✨ AI Research"]
+        C["Google Gemini"]
+        D["Structured Research Result"]
+    end
+
+    subgraph Processing["🧹 Processing Pipeline"]
+        E["Normalization"]
+        F["Deterministic Verification"]
+        G["Confidence Scoring"]
+    end
+
+    subgraph Output["📊 Output Generation"]
+        H["Analytics Engine"]
+        I["JSON / CSV Export"]
+        J["HTML Report Generator"]
+    end
+
+    K["📁 Generated Artifacts
+    • results.json
+    • results.csv
+    • analytics.json
+    • report.html"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+
+    G --> H
+    G --> I
+
+    H --> J
+    I --> J
+
+    J --> K
 ```
+### Pipeline Overview
+
+1. Read SaaS applications from a CSV file.
+2. Research each application using Google Gemini.
+3. Normalize inconsistent LLM outputs.
+4. Verify responses using deterministic heuristics.
+5. Generate confidence scores and analytics.
+6. Export structured JSON, CSV and an interactive HTML dashboard.
 
 ---
 
 # 🧠 Verification Pipeline
 
-Confidence is calculated using deterministic heuristics instead of black-box evaluation.
+Each research result is evaluated using deterministic scoring instead of relying on another LLM.
 
 | Stage | Weight |
-|--------|---------|
+|--------|--------|
 | Structural Validation | 40% |
 | Evidence Validation | 35% |
 | Completeness Validation | 25% |
 
-Verification checks include:
+Verification includes:
 
-- Required fields
+- Required fields validation
 - Schema validation
-- Authentication consistency
-- Official documentation URLs
-- Buildability
-- Evidence quality
+- Official documentation checks
+- Authentication validation
+- Buildability validation
 - Confidence scoring
-- Manual review eligibility
+- Manual review detection
 
 ---
 
 # 💡 Engineering Decisions
 
-The project intentionally favors deterministic engineering over prompt engineering.
+Some key design choices:
 
-Some important design choices include:
+- Built entirely in **Go** for simplicity, portability and performance.
+- Uses **deterministic verification** instead of probabilistic evaluation.
+- Introduces a **normalization layer** before analytics to improve consistency.
+- Continues processing even if individual applications fail.
+- Generates a **static HTML dashboard** from saved artifacts rather than relying on a running backend.
 
-- Built entirely in Go for simplicity, static binaries and strong concurrency support.
-- Normalization layer added before analytics to reduce LLM output variance.
-- Deterministic verification instead of probabilistic evaluation libraries.
-- Static HTML reports instead of a database-backed dashboard for portability.
-- Batch execution continues even if individual applications fail.
-- Analytics generated from structured artifacts rather than LLM summaries.
+📖 Read the detailed engineering write-up:
 
-📖 A detailed write-up describing architecture decisions, trade-offs, challenges, testing strategy and future improvements is available in **[ENGINEERING_DECISIONS.md](ENGINEERING_DECISIONS.md)**.
+**➡️ [ENGINEERING_DECISIONS.md](ENGINEERING_DECISIONS.md)**
 
 ---
 
@@ -194,55 +217,101 @@ Some important design choices include:
 <img src="assets/api-response.png" width="900"/>
 </p>
 
-# 📁 Generated Artifacts
+---
 
-Running the batch pipeline automatically generates:
+# 📂 Project Structure
 
 ```text
-data/output/
-
-results.json
-
-results.csv
-
-analytics.json
-
-report.html
+tooling-intelligence
+│
+├── cmd/
+│   └── server/
+│
+├── internal/
+│   ├── analytics/
+│   ├── batch/
+│   ├── config/
+│   ├── gemini/
+│   ├── handlers/
+│   ├── models/
+│   ├── normalizer/
+│   ├── prompts/
+│   ├── report/
+│   ├── research/
+│   ├── storage/
+│   └── verification/
+│
+├── templates/
+├── data/
+│   ├── input/
+│   └── output/
+│
+├── assets/
+│
+├── README.md
+├── ENGINEERING_DECISIONS.md
+├── go.mod
+└── go.sum
 ```
 
 ---
 
-# ⚙ Local Setup
+# 📁 Generated Artifacts
 
-Clone
+Each batch execution generates:
+
+```text
+data/output/
+
+analytics.json
+results.json
+results.csv
+report.html
+```
+
+These artifacts become the source of truth for analytics, reporting and manual review.
+
+---
+
+# 🛠️ Tech Stack
+
+| Layer | Technology |
+|--------|------------|
+| Language | Go 1.24 |
+| LLM | Google Gemini |
+| Templates | html/template |
+| Data Storage | JSON + CSV |
+| Verification | Deterministic Heuristics |
+| Analytics | Custom Engine |
+| Dashboard | HTML + CSS |
+
+---
+
+# ⚙️ Local Setup
+
+Clone the repository
 
 ```bash
-git clone https://github.com/<username>/tooling-intelligence.git
+git clone https://github.com/<your-username>/tooling-intelligence.git
 
 cd tooling-intelligence
 ```
 
-Create
-
-```
-.env
-```
+Create a `.env` file
 
 ```env
 GEMINI_API_KEY=YOUR_API_KEY
-
 GEMINI_MODEL=gemini-flash-latest
-
 PORT=8080
 ```
 
-Install
+Install dependencies
 
 ```bash
 go mod tidy
 ```
 
-Run
+Run the application
 
 ```bash
 go run ./cmd/server
@@ -250,35 +319,43 @@ go run ./cmd/server
 
 ---
 
-# 🛠 Tech Stack
+# 🔄 Batch Processing
 
-| Layer | Technology |
-|--------|------------|
-| Language | Go |
-| LLM | Google Gemini |
-| Templates | html/template |
-| Storage | JSON / CSV |
-| Analytics | Custom Engine |
-| Verification | Deterministic Heuristics |
-| Dashboard | HTML + CSS |
+Update:
+
+```text
+data/input/applications.csv
+```
+
+Run:
+
+```http
+POST /batch
+```
+
+The pipeline automatically generates:
+
+- `results.json`
+- `results.csv`
+- `analytics.json`
+- `report.html`
 
 ---
 
 # 🔮 Future Improvements
 
-- MCP integration
+- Model Context Protocol (MCP) integration
 - Multi-provider LLM support
-- Parallel research workers
-- Retry queue
-- Chart.js visualizations
+- Concurrent worker pool
+- Retry queue with exponential backoff
+- Interactive charts
 - Docker deployment
 - User-provided API keys
 - Incremental batch execution
-- API documentation
-- Kubernetes deployment
+- Database-backed persistence
 
 ---
 
-# 📜 License
+# 📄 License
 
 MIT
