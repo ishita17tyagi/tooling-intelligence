@@ -1,12 +1,3 @@
----
-title: Tooling Intelligence
-emoji: 🛠️
-colorFrom: indigo
-colorTo: blue
-sdk: static
-pinned: false
----
-
 <p align="center">
   <img src="assets/logo.png" width="140" alt="Tooling Intelligence Logo"/>
 </p>
