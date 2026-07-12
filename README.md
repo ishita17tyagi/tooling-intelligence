@@ -24,7 +24,7 @@ Production-inspired pipeline that researches SaaS tools, validates integration m
 
 | Resource | Link |
 |----------|------|
-| 📊 Interactive HTML Dashboard | https://ishita17tyagi.github.io/tooling-intelligence/ |
+| 📊 HTML Dashboard | https://ishita17tyagi.github.io/tooling-intelligence/ |
 | 📝 Engineering Blog | https://behind-the-build.hashnode.dev/prompting-is-easy-engineering-reliable-ai-systems-isn-t |
 | 🧠 Engineering Decisions | [ENGINEERING_DECISIONS.md](ENGINEERING_DECISIONS.md) |
 
