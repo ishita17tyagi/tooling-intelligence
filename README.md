@@ -10,6 +10,7 @@ Production-inspired pipeline that researches SaaS tools, validates integration m
 </p>
 
 <p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square"/>
   <img src="https://img.shields.io/badge/Go-1.24-00ADD8?style=flat-square&logo=go"/>
   <img src="https://img.shields.io/badge/Google-Gemini-blue?style=flat-square&logo=google"/>
   <img src="https://img.shields.io/badge/Architecture-Modular-success?style=flat-square"/>
@@ -56,8 +57,6 @@ Given a list of applications, it automatically:
 - 📈 Generates confidence scores
 - 📊 Produces analytics
 - 📑 Creates an interactive HTML dashboard
-
-The project emphasizes **engineering reliable systems around LLMs**, not simply generating responses.
 
 ---
 
@@ -307,7 +306,7 @@ These artifacts become the source of truth for analytics, reporting and manual r
 Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/tooling-intelligence.git
+git clone https://github.com/ishita17tyagi/tooling-intelligence.git
 
 cd tooling-intelligence
 ```
@@ -357,6 +356,21 @@ The pipeline automatically generates:
 
 ---
 
+# 🤝 Contributing
+
+Tooling Intelligence is an open-source personal project.
+
+Feel free to:
+
+- ⭐ Star the repository
+- 🍴 Fork it
+- 🛠️ Build on top of it
+- 💡 Share feedback or ideas
+
+While I'm not actively accepting external pull requests at the moment, discussions and suggestions are always welcome.
+
+---
+
 # 🔮 Future Improvements
 
 - Model Context Protocol (MCP) integration
@@ -373,4 +387,6 @@ The pipeline automatically generates:
 
 # 📄 License
 
-MIT
+This project is licensed under the **MIT License**.
+
+See the [LICENSE](LICENSE) file for details.
